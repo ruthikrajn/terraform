@@ -1,6 +1,6 @@
 provider "aws" {
   region                  = "ap-south-1"
-  profile                 = "pavan"
+  profile                 = "RRR"
 }
 resource "tls_private_key" "webserver_key" {
     algorithm   =  "RSA"
@@ -114,7 +114,7 @@ provisioner "remote-exec" {
       "sudo mkfs.ext4  /dev/xvdh",
       "sudo mount  /dev/xvdh  /var/www/html",
       "sudo rm -rf /var/www/html/*",
-      "sudo git clone https://github.com/saipavanbm/web.git /var/www/html/"
+      "sudo git clone https://github.com/ruthikrsj/web.git /var/www/html/"
     ]
   }
 }
@@ -122,7 +122,7 @@ resource "aws_s3_bucket" "image-bucket" {
     bucket  = "webserver165"
     acl     = "public-read"
 provisioner "local-exec" {
-        command     = "git clone https://github.com/saipavanbm/image.git cloud"
+        command     = "https://github.com/ruthikrsj/cloud.git cloud"
     }
 
 }
