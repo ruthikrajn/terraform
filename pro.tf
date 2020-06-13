@@ -53,7 +53,7 @@ resource "aws_security_group" "allow_tls" {
   }
 }
 resource "aws_instance" "myint"{
-  ami	         = "ami-005956c5f0f757d37"
+  ami	         = "ami-0447a12f28fddb066"
   instance_type  = "t2.micro"
   key_name       = "webserver"
   vpc_security_group_ids  = [aws_security_group.allow_tls.id]
